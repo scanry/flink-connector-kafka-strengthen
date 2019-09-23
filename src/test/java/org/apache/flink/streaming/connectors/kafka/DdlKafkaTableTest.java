@@ -36,7 +36,7 @@ public class DdlKafkaTableTest{
 				+ "            'connector.property-version' = '1',"
 				
 				+ "            'connector.properties.0.key' = 'bootstrap.servers',"
-				+ "            'connector.properties.0.value' = '10.100.44.46:6667',"				
+				+ "            'connector.properties.0.value' = '127.0.0.1:6667',"				
 				+ "            'connector.properties.1.key' = 'group.id',"
 				+ "            'connector.properties.1.value' = '"+UUID.randomUUID().toString() + System.currentTimeMillis()+"',"				
 				+ "            'connector.properties.2.key' = 'specific-bounded-rule-expr',"

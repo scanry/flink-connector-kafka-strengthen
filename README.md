@@ -1,24 +1,8 @@
-package org.apache.flink.streaming.connectors.kafka;
-
-import java.util.UUID;
-
-import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.table.api.EnvironmentSettings;
-import org.apache.flink.table.api.Table;
-import org.apache.flink.table.api.java.StreamTableEnvironment;
-
-/**
- *
- * @author chinacsci
- * @date   2019年8月28日 上午10:43:37
- * @email  359852326@qq.com
- * TODO
- */
-public class DdlKafkaTableTest{
-
-	@SuppressWarnings("deprecation")
-	public static void main(String[] args) throws Exception {
-		StreamExecutionEnvironment execEnv=StreamExecutionEnvironment.getExecutionEnvironment();
+---
+一.	代码例子
+---
+```
+StreamExecutionEnvironment execEnv=StreamExecutionEnvironment.getExecutionEnvironment();
 		EnvironmentSettings environmentSettings=EnvironmentSettings.newInstance().useBlinkPlanner().build();
 		StreamTableEnvironment tEnv = StreamTableEnvironment.create(execEnv,environmentSettings);
 		String tableName = "pfcompy_basicinfo";
@@ -60,5 +44,5 @@ public class DdlKafkaTableTest{
 		Table bizQueryTable = tEnv.sqlQuery(bizQuerySql);
 		tEnv.toRetractStream(bizQueryTable,bizQueryTable.getSchema().toRowType()).print();
 		execEnv.execute("Flink Streaming Java API Skeleton");
-	}
-}
+```
+           
